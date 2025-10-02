@@ -1,14 +1,18 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class playermovement : MonoBehaviour
 {
     public float playerspeed;
+
+    public GameObject projectile;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         transform.position = new Vector3(0, -4, 0);
-        
+
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
@@ -19,7 +23,10 @@ public class playermovement : MonoBehaviour
             transform.Translate(Vector3.left * playerspeed * Time.deltaTime);
         }
 
-       
+       if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectile , transform.position , transform.rotation);
+        }
 
         if (Input.GetKey(KeyCode.D))
         {
