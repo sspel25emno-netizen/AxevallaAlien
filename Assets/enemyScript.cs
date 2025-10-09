@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enemyScript : MonoBehaviour
@@ -19,7 +20,39 @@ public class enemyScript : MonoBehaviour
 
             transform.position = new Vector3(Random.Range(-8, 8), 5.5f, 0);
 
+            
 
         }
     }
-}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Laser")
+        {
+
+            Destroy(gameObject);
+        }
+    }
+
+    
+        
+    
+
+
+
+
+
+
+
+
+}   
+
+
+
+
+
+
+
+        
+
+
