@@ -12,7 +12,7 @@ public class playermovement : MonoBehaviour
     {
         transform.position = new Vector3(0, -4, 0);
 
-        Destroy(gameObject, 5);
+        
     }
 
     // Update is called once per frame
