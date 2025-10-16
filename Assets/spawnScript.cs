@@ -1,10 +1,11 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class spawnScript : MonoBehaviour
 {
     public GameObject enemyship;
-    private int enemycounter;
+    private int enemyCounter;
     private GameObject player;
     
 
@@ -23,7 +24,29 @@ public class spawnScript : MonoBehaviour
     IEnumerator EnemySpawner()
     {
 
+        while (true)
+        {
 
-        yield return null;
+
+            if (enemyCounter < 3 && GameObject.Find("Player") != null)
+            {
+
+                Instantiate(enemyship, new Vector3(Random.Range(-8, 8), 7, 0), Quaternion.identity);
+
+                enemyCounter++;
+                yield return new WaitForSeconds(5);
+
+            }
+            else yield return null;
+        }
     }
+    
+
+
+
+    
+
+
+
+
 }
