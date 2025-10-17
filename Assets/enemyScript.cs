@@ -35,7 +35,7 @@ public class enemyScript : MonoBehaviour
     }
     public void TakeDamage()
     {
-
+        Destroy(gameObject);
     }
 
     

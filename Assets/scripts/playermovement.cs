@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 public class playermovement : MonoBehaviour
 {
     public float playerspeed;
-
+    public int playerHealth;
     public GameObject projectile;
+
+    public GameObject healthContainer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,9 +55,18 @@ public class playermovement : MonoBehaviour
 
     }
 
+    public void TakingDamage()
+    {
+        playerHealth = playerHealth - 1;
 
+        if(playerHealth < 0)
+        {
+            Destroy(gameObject);
+
+        }
+    }
 }
-        
+       
         
 
 

@@ -28,7 +28,7 @@ public class spawnScript : MonoBehaviour
         {
 
 
-            if (enemyCounter < 3 && GameObject.Find("Player") != null)
+            if (enemyCounter < 3 && GameObject.Find("player") != null)
             {
 
                 Instantiate(enemyship, new Vector3(Random.Range(-8, 8), 7, 0), Quaternion.identity);
